@@ -5,7 +5,7 @@
 <p align="center"><b>A stock <a href="https://openvoiceos.org">OpenVoiceOS</a> voice assistant, running in your browser.</b><br>
 Phone, tablet, TV or a Raspberry Pi in kiosk mode – nothing to install.</p>
 
-<p align="center"><a href="https://app.emkay.ai/"><b>Open Emkay</b></a> · <a href="https://emkay.ai/">emkay.ai</a> · <a href="https://store.emkay.ai/">Skill store</a> · <a href="https://github.com/emkay-voice/emkay">Source</a> · <a href="https://huggingface.co/Emkay-Voice">Models</a></p>
+<p align="center"><a href="https://app.emkay.ai/"><b>Open Emkay</b></a> · <a href="https://emkay.ai/">emkay.ai</a> · <a href="https://emkay.ai/home/">Emkay Home</a> · <a href="https://store.emkay.ai/">Skill store</a> · <a href="https://dev.emkay.ai/">Emkay Dev</a> · <a href="https://github.com/emkay-voice/emkay">Source</a> · <a href="https://huggingface.co/Emkay-Voice">Models</a></p>
 
 ---
 
@@ -39,9 +39,19 @@ other hardware.
 - **On-device speech** – Whisper speech recognition and Piper voices in the browser (WebAssembly/WebGPU).
 - **Ask it** – "what went out today?" answers from the log, by voice.
 
-**Status: early alpha.** Twelve languages, English first. Skills installable from the control panel
-and the store, wake word, and on-device speech. Next up: Emkay's own wake word "hey M K", a
-satellite mode (HiveMind, then Home Assistant Assist), and self-hosting Emkay from your own house.
+**Status: early alpha.** Twelve languages. On-device speech recognition and voices, Emkay's own
+wake word "Hey Emkay", skills from the control panel and the store. Emkay can think in three
+places – ⚙ → *Where should Emkay think?*: on the device, in the house with **Emkay Home**
+(HiveMind), or with **Home Assistant** (an Assist satellite).
+
+### Home Assistant
+
+⚙ → *Where should Emkay think?* → *Connect to my Home Assistant*: one login on Home Assistant's
+own page, no token. Lights and heating by voice through Assist, and Emkay shows up in Home
+Assistant as a device of its own – volume, listening on and off, "say", its control panel's
+settings. With Emkay Home, the house and every Emkay in it. On the Home Assistant side it is the
+[OpenVoiceOS integration](https://github.com/andlo/ha-ovos-integration), which works for any
+OpenVoiceOS.
 
 ## Repositories
 
@@ -50,8 +60,17 @@ satellite mode (HiveMind, then Home Assistant Assist), and self-hosting Emkay fr
 | Repository | What it is |
 |---|---|
 | [emkay](https://github.com/emkay-voice/emkay) | the app: OpenVoiceOS in the browser, served at [app.emkay.ai](https://app.emkay.ai/) |
+| [emkay-home](https://github.com/emkay-voice/emkay-home) | Emkay Home, the OpenVoiceOS for the house – phones and tablets with Emkay are its satellites; one line installs it, a QR code adds a phone ([emkay.ai/home](https://emkay.ai/home/)) |
 | [store](https://github.com/emkay-voice/store) | the Emkay skill store, [store.emkay.ai](https://store.emkay.ai/) – complete, working skills only, installed straight into your Emkay |
 | [emkay-voice.github.io](https://github.com/emkay-voice/emkay-voice.github.io) | the project page, [emkay.ai](https://emkay.ai/) |
+
+### Emkay Dev – make a skill
+
+| Repository | What it is |
+|---|---|
+| [dev](https://github.com/emkay-voice/dev) | [dev.emkay.ai](https://dev.emkay.ai/): make an OpenVoiceOS skill in the browser and hear Emkay answer it, step by step |
+| [vscode-emkay](https://github.com/emkay-voice/vscode-emkay) | Emkay Dev for VS Code: Emkay next to your code, also in vscode.dev |
+| [skill-template](https://github.com/emkay-voice/skill-template) | your first skill, in all of Emkay's languages |
 
 ### OVOS plugins (made for Emkay, usable anywhere)
 
@@ -62,6 +81,7 @@ satellite mode (HiveMind, then Home Assistant Assist), and self-hosting Emkay fr
 | [ovos-stt-plugin-whisper-browser](https://github.com/emkay-voice/ovos-stt-plugin-whisper-browser) | Whisper speech recognition on the device, in the browser – audio never leaves it |
 | [ovos-stt-plugin-browser](https://github.com/emkay-voice/ovos-stt-plugin-browser) | the browser's own speech recognition (Web Speech API) |
 | [ovos-tts-plugin-piper-browser](https://github.com/emkay-voice/ovos-tts-plugin-piper-browser) | Piper voices made on the device, in the browser |
+| [ovos-assist-pipeline-plugin](https://github.com/emkay-voice/ovos-assist-pipeline-plugin) | intent pipeline: what Home Assistant's Assist recognizes (lights, heating, rooms) goes to Home Assistant |
 
 ### OVOS skills
 
