@@ -117,6 +117,7 @@ Templates, each in all of Emkay's languages – start from one in *Emkay: New sk
 | [ovos-skill-wiki-offline](https://github.com/emkay-voice/ovos-skill-wiki-offline) | fully offline general knowledge: Wikipedia's ~10,000 vital articles |
 | [ovos-skill-karaoke](https://github.com/emkay-voice/ovos-skill-karaoke) | the device sings – its own voice autotuned onto the melody, with a band – or plays karaoke, with words and chords on the screen |
 | [ovos-skill-jamband](https://github.com/emkay-voice/ovos-skill-jamband) | a band you lead with your voice: drums, then bass, then the whole band, in any style and key |
+| [ovos-skill-music-teacher](https://github.com/emkay-voice/ovos-skill-music-teacher) | piano, guitar and bass lessons: it shows you, plays it, listens to you play and tells you what was right; a tuner, and a course per instrument |
 | [ovos-skill-intercom](https://github.com/emkay-voice/ovos-skill-intercom) | spoken messages to another OVOS device in the house, with a spoken reply |
 | [ovos-skill-nato-alphabet](https://github.com/emkay-voice/ovos-skill-nato-alphabet) | spells words with the NATO alphabet – Alpha, Bravo, Charlie… |
 | [ovos-skill-morse-code](https://github.com/emkay-voice/ovos-skill-morse-code) | text to and from Morse code, played as beeps |
@@ -136,6 +137,8 @@ Providers for the [common reading pipeline](https://github.com/OpenVoiceOS/ovos-
 | [ovos-skill-voices-of-tomorrow](https://github.com/emkay-voice/ovos-skill-voices-of-tomorrow) | 365tomorrows' *Voices of Tomorrow* audio readings (a media skill) |
 | [ovos-skill-arxiv-papers](https://github.com/emkay-voice/ovos-skill-arxiv-papers) | arXiv paper abstracts |
 | [ovos-skill-horoscope-readings](https://github.com/emkay-voice/ovos-skill-horoscope-readings) | the daily horoscope, in any language |
+| [ovos-skill-opds-books](https://github.com/emkay-voice/ovos-skill-opds-books) | books from e-book catalogs (OPDS, Standard Ebooks) |
+| [ovos-skill-documents](https://github.com/emkay-voice/ovos-skill-documents) | your own documents – text, Markdown, PDF, Word, OpenDocument, EPUB and HTML – from folders or urls |
 
 ### Models and training
 
