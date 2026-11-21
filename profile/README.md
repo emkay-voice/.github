@@ -42,7 +42,10 @@ other hardware.
 **Status: early alpha.** Twelve languages. On-device speech recognition and voices, Emkay's own
 wake word "Hey Emkay", skills from the control panel and the store. Emkay can think in three
 places – ⚙ → *Where should Emkay think?*: on the device, in the house with **Emkay Home**
-(HiveMind), or with **Home Assistant** (an Assist satellite).
+(HiveMind), or with **Home Assistant** (an Assist satellite). Short, current facts come from
+Wikidata, the horoscope and the OpenVoiceOS blog are read aloud, and Emkay has started making
+music: it sings – autotuned onto the melody, with a band behind it – plays karaoke, and leads a
+jam band by voice, all made on the device.
 
 ### Home Assistant
 
@@ -60,8 +63,8 @@ OpenVoiceOS.
 | Repository | What it is |
 |---|---|
 | [emkay](https://github.com/emkay-voice/emkay) | the app: OpenVoiceOS in the browser, served at [app.emkay.ai](https://app.emkay.ai/) |
-| [emkay-home](https://github.com/emkay-voice/emkay-home) | Emkay Home, the OpenVoiceOS for the house – phones and tablets with Emkay are its satellites; one line installs it, a QR code adds a phone ([emkay.ai/home](https://emkay.ai/home/)) |
-| [store](https://github.com/emkay-voice/store) | the Emkay skill store, [store.emkay.ai](https://store.emkay.ai/) – complete, working skills only, installed straight into your Emkay |
+| [emkay-home](https://github.com/emkay-voice/emkay-home) | Emkay Home, the OpenVoiceOS for the house – every Emkay can be its satellite; one line installs it, a QR code adds a device ([emkay.ai/home](https://emkay.ai/home/)) |
+| [store](https://github.com/emkay-voice/store) | the Emkay skill store, [store.emkay.ai](https://store.emkay.ai/) – complete, working skills only, tested every night, installed straight into your Emkay |
 | [emkay-voice.github.io](https://github.com/emkay-voice/emkay-voice.github.io) | the project page, [emkay.ai](https://emkay.ai/) |
 
 ### Emkay Dev – make a skill
@@ -69,8 +72,22 @@ OpenVoiceOS.
 | Repository | What it is |
 |---|---|
 | [dev](https://github.com/emkay-voice/dev) | [dev.emkay.ai](https://dev.emkay.ai/): make an OpenVoiceOS skill in the browser and hear Emkay answer it, step by step |
-| [vscode-emkay](https://github.com/emkay-voice/vscode-emkay) | Emkay Dev for VS Code: Emkay next to your code, also in vscode.dev |
-| [skill-template](https://github.com/emkay-voice/skill-template) | your first skill, in all of Emkay's languages |
+| [vscode-emkay](https://github.com/emkay-voice/vscode-emkay) | Emkay Dev for VS Code: Emkay next to your code, also in vscode.dev – new skill, run, test, add a language |
+| [ovos-routing-judge](https://github.com/emkay-voice/ovos-routing-judge) | who took an utterance, and was it the right skill? – the judge behind Emkay Dev's and the store's tests |
+
+Templates, each in all of Emkay's languages – start from one in *Emkay: New skill*, or use it as a GitHub template:
+
+| Repository | What it shows |
+|---|---|
+| [ovos-skill-hello-example](https://github.com/emkay-voice/ovos-skill-hello-example) | your first skill: say "hello from my skill" and it answers |
+| [ovos-skill-quiz-example](https://github.com/emkay-voice/ovos-skill-quiz-example) | a quiz that keeps score – `get_response`, `ask_yesno` and stop |
+| [ovos-skill-pictures-example](https://github.com/emkay-voice/ovos-skill-pictures-example) | pictures on the screen – "show me a dog" |
+| [ovos-skill-air-quality-example](https://github.com/emkay-voice/ovos-skill-air-quality-example) | asking the web: air quality and UV where you are (Open-Meteo, no key) |
+| [ovos-skill-answers-example](https://github.com/emkay-voice/ovos-skill-answers-example) | your own answers – a common query skill from a list of questions |
+| [ovos-skill-radio-example](https://github.com/emkay-voice/ovos-skill-radio-example) | your own radio – stations played with the media player (OCP) |
+| [ovos-skill-hints-example](https://github.com/emkay-voice/ovos-skill-hints-example) | a fallback skill that suggests the sentence you may have meant |
+| [ovos-skill-common-reading-example](https://github.com/emkay-voice/ovos-skill-common-reading-example) | a reading provider: RSS and HTML scraping, caching, translation |
+| [ovos-phal-plugin-quiet-hours-example](https://github.com/emkay-voice/ovos-phal-plugin-quiet-hours-example) | a PHAL plugin: the voice down in the evening, up in the morning |
 
 ### OVOS plugins (made for Emkay, usable anywhere)
 
@@ -82,6 +99,11 @@ OpenVoiceOS.
 | [ovos-stt-plugin-browser](https://github.com/emkay-voice/ovos-stt-plugin-browser) | the browser's own speech recognition (Web Speech API) |
 | [ovos-tts-plugin-piper-browser](https://github.com/emkay-voice/ovos-tts-plugin-piper-browser) | Piper voices made on the device, in the browser |
 | [ovos-assist-pipeline-plugin](https://github.com/emkay-voice/ovos-assist-pipeline-plugin) | intent pipeline: what Home Assistant's Assist recognizes (lights, heating, rooms) goes to Home Assistant |
+| [ovos-phal-plugin-ha-link](https://github.com/emkay-voice/ovos-phal-plugin-ha-link) | links an OpenVoiceOS device to Home Assistant from the device's side – its bus and control panel, no open ports, works behind NAT |
+| [ovos-phal-plugin-midi](https://github.com/emkay-voice/ovos-phal-plugin-midi) | a MIDI instrument on the bus: a General MIDI synth skills play note by note, MIDI keyboards in, real instruments out |
+| [ovos-ocp-tts-plugin](https://github.com/emkay-voice/ovos-ocp-tts-plugin) | text read aloud as media: `tts//` uris play as sentences in the device's own voice ([ovos-media#240](https://github.com/OpenVoiceOS/ovos-media/issues/240)) |
+| [ovos-network-log](https://github.com/emkay-voice/ovos-network-log) | a network log for any OpenVoiceOS: every request – when, where, who asked, never what |
+| [ovos-PHAL-plugin-netpolicy](https://github.com/emkay-voice/ovos-PHAL-plugin-netpolicy) | per-service network policy, including enforced Tor routing (design stage) |
 
 ### OVOS skills
 
@@ -91,6 +113,29 @@ OpenVoiceOS.
 | [ovos-skill-guardian](https://github.com/emkay-voice/ovos-skill-guardian) | your privacy by voice: what went out today, who hears you, going offline |
 | [ovos-skill-store](https://github.com/emkay-voice/ovos-skill-store) | find and install skills by voice, from one or more skill stores |
 | [ovos-skill-kiosk](https://github.com/emkay-voice/ovos-skill-kiosk) | full screen, screen kept on and install as an app, by voice |
+| [ovos-skill-wikidata](https://github.com/emkay-voice/ovos-skill-wikidata) | short, current facts from Wikidata – who leads a country, capitals, population, birthdays, where places are; no keys |
+| [ovos-skill-wiki-offline](https://github.com/emkay-voice/ovos-skill-wiki-offline) | fully offline general knowledge: Wikipedia's ~10,000 vital articles |
+| [ovos-skill-karaoke](https://github.com/emkay-voice/ovos-skill-karaoke) | the device sings – its own voice autotuned onto the melody, with a band – or plays karaoke, with words and chords on the screen |
+| [ovos-skill-jamband](https://github.com/emkay-voice/ovos-skill-jamband) | a band you lead with your voice: drums, then bass, then the whole band, in any style and key |
+| [ovos-skill-intercom](https://github.com/emkay-voice/ovos-skill-intercom) | spoken messages to another OVOS device in the house, with a spoken reply |
+| [ovos-skill-nato-alphabet](https://github.com/emkay-voice/ovos-skill-nato-alphabet) | spells words with the NATO alphabet – Alpha, Bravo, Charlie… |
+| [ovos-skill-morse-code](https://github.com/emkay-voice/ovos-skill-morse-code) | text to and from Morse code, played as beeps |
+
+### Stories and reading
+
+Providers for the [common reading pipeline](https://github.com/OpenVoiceOS/ovos-common-reading-pipeline-plugin): "read me a fairy tale" and so on.
+
+| Repository | What it reads |
+|---|---|
+| [ovos-skill-andersen-tales](https://github.com/emkay-voice/ovos-skill-andersen-tales) | Hans Christian Andersen's fairy tales |
+| [ovos-skill-grimm-tales](https://github.com/emkay-voice/ovos-skill-grimm-tales) | the Brothers Grimm's fairy tales |
+| [ovos-skill-andrew-lang-tales](https://github.com/emkay-voice/ovos-skill-andrew-lang-tales) | Andrew Lang's Fairy Books |
+| [ovos-skill-bechstein-tales](https://github.com/emkay-voice/ovos-skill-bechstein-tales) | Ludwig Bechstein's German fairy tales (German) |
+| [ovos-skill-cosquin-tales](https://github.com/emkay-voice/ovos-skill-cosquin-tales) | Emmanuel Cosquin's Lorraine folk tales (French) |
+| [ovos-skill-365tomorrows-stories](https://github.com/emkay-voice/ovos-skill-365tomorrows-stories) | daily flash sci-fi from 365tomorrows.com |
+| [ovos-skill-voices-of-tomorrow](https://github.com/emkay-voice/ovos-skill-voices-of-tomorrow) | 365tomorrows' *Voices of Tomorrow* audio readings (a media skill) |
+| [ovos-skill-arxiv-papers](https://github.com/emkay-voice/ovos-skill-arxiv-papers) | arXiv paper abstracts |
+| [ovos-skill-horoscope-readings](https://github.com/emkay-voice/ovos-skill-horoscope-readings) | the daily horoscope, in any language |
 
 ### Models and training
 
